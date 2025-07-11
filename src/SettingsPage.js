@@ -11,7 +11,7 @@ function SettingsPage() {
 
   useEffect(() => {
     // Buscar dados atuais ao carregar a página
-    axios.get('https://msam-back-67b577e61cb6.herokuapp.com/api/v1/settings')
+    axios.get('url-heroku/api/v1/settings')
       .then((res) => {
         const config = res.data;
         setIsActive(config.isAutomationActive);
@@ -36,7 +36,7 @@ function SettingsPage() {
       customMessage: customMessage,
     };
 
-    axios.put('https://msam-back-67b577e61cb6.herokuapp.com/api/v1/settings', settingsData)
+    axios.put('url-heroku/api/v1/settings', settingsData)
       .then(() => {
         alert('Configurações salvas com sucesso!');
       })
