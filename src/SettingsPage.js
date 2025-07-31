@@ -14,7 +14,7 @@ function SettingsPage() {
   // Efeito para carregar as configurações iniciais
   useEffect(() => {
     // URL CORRIGIDA
-    axios.get('http://localhost:3001/api/v1/settings')
+    axios.get('https://msam-back-f94d9ce96824.herokuapp.com/api/v1/settings')
       .then(response => {
         const { data } = response;
         setIsActive(data.isAutomationActive);
@@ -41,7 +41,7 @@ function SettingsPage() {
     console.log('Enviando para a API:', settingsData);
 
     // URL CORRIGIDA
-    axios.put('http://localhost:3001/api/v1/settings', settingsData)
+    axios.put('https://msam-back-f94d9ce96824.herokuapp.com/api/v1/settings', settingsData)
       .then(response => {
         alert('Configurações salvas com sucesso!');
         console.log('Resposta do servidor:', response.data.message);
